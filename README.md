@@ -1,1 +1,0 @@
-The app for HackRice12 for Team xxxx
