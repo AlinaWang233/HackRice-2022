@@ -2,6 +2,7 @@ from pprint import pprint
 import googlemaps # pip install googlemaps
 from queue import PriorityQueue
 import member
+import math
 import locManager
 import requests
 import json
@@ -26,7 +27,8 @@ def str_to_loc(addr):
 shelter_file = open("./shelters.txt", 'r')
 shltr_addr = shelter_file.readline()
 while(shltr_addr != ''):
-    SHELTERS.append(str_to_loc(shltr_addr))
+    shltr_data = str_to_loc(shltr_addr)
+    SHELTERS.append(math.dist(user_addr, shltr_data), shltr_data)
     shltr_addr = shelter_file.readline()
 
 # addr - a string of the address
@@ -34,5 +36,4 @@ def get_location(addr):
     return str_to_loc(addr)
 
 def get_nrst_shelter():
-    return None
-
+    return SHELTERS.queue[0]
