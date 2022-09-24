@@ -2,17 +2,78 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {background-color: aliceblue;}
+
+        h1 {
+            color:rgb(86, 169, 224);
+            display: block;
+            font-size: 2em;
+            margin-top: 0.67em;
+            margin-bottom: 0.67em;
+            margin-left: 0;
+            margin-right: 0;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        h3 {
+            color:rgb(111, 191, 201);
+            text-align: left;
+            display: block;
+            margin-top: 50px;
+            margin-bottom: 20px;
+            margin-left: 0;
+            margin-right: 0;
+            font-weight: bold;
+        }
+
+        button {
+            background-color: orange; /* Green */
+            border: 2px solid gray;
+            border-radius: 8px;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+        }
+        
+        button span {
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            transition: 0.5s;
+        }
+
+        button span:after {
+            content: '\00bb';
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            right: -20px;
+            transition: 0.5s;
+        }
+
+        button:hover span {
+            padding-right: 25px;
+        }
+
+        button:hover span:after {
+            opacity: 1;
+            right: 0;
+        }
+    </style>
 </head>
 
-<body style>
+<body>
 
     <h1>Hurricane SOS</h1>
 
-    <div>
-        <h3>Contact Rescue Team</h3>
-        <button>Click Here to Chat</button>
-    </div> 
+    <h3>Contact Rescue Team</h3>
+    <button style="vertical-align:middle"><span>Click Here to Chat </span></button>
     
     <h3>Real Time Capture Map</h3>
 
@@ -20,19 +81,27 @@
 
     <script>
     function myMap() {
-    var mapProp= {
-    center:new google.maps.LatLng(51.508742,-0.120850),
-    zoom:5,
-    };
-    var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+        var mapProp= {
+            center:new google.maps.LatLng(51.508742,-0.120850),
+            zoom:5,
+        };
+        var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
     }
     </script>
 
-    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY&callback=myMap"></script>
+    <iframe
+    width="600"
+    height="450"
+    style="border:0"
+    loading="lazy"
+    allowfullscreen
+    referrerpolicy="no-referrer-when-downgrade"
+    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDuu7nGNYVBhoLQFNa1_qZ7O2CHs0ON94E&q=Rice+University,Houston+TX">
+    </iframe>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDuu7nGNYVBhoLQFNa1_qZ7O2CHs0ON94E&callback=myMap"></script>
         
-    <div>
-        <button>Log Out</button>
-    </div> 
+    <button style="vertical-align:middle"><span>Log Out</span></button>
 
 </body>
 </html> 
