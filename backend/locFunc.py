@@ -1,6 +1,7 @@
 from pprint import pprint
 import googlemaps # pip install googlemaps
 from queue import PriorityQueue
+from flask import Flask
 import member
 import math
 import locManager
@@ -11,25 +12,12 @@ import urllib
 SHELTERS = PriorityQueue
 API_KEY = 'AIzaSyDuu7nGNYVBhoLQFNa1_qZ7O2CHs0ON94E'
 
-user_addr = locManager.my_loc
-map_client = googlemaps.Client(API_KEY)
-wp_address = '6100 Main St, Houston, TX'
-response = map_client.geocode(wp_address)
-# pprint(response)
-
 def str_to_loc(addr):
     my_rps = map_client.geocode(addr)
     lat = my_rps[0].get("geometry").get("location").get("lat")
     lng = my_rps[0].get("geometry").get("location").get("lng")
     return (lat, lng)
 
-# Initialize shelter database
-shelter_file = open("./shelters.txt", 'r')
-shltr_addr = shelter_file.readline()
-while(shltr_addr != ''):
-    shltr_data = str_to_loc(shltr_addr)
-    SHELTERS.append(math.dist(user_addr, shltr_data), shltr_data)
-    shltr_addr = shelter_file.readline()
 
 # addr - a string of the address
 def get_location(addr):
@@ -37,3 +25,18 @@ def get_location(addr):
 
 def get_nrst_shelter():
     return SHELTERS.queue[0]
+
+if __name__ == '__main__':
+    # user_addr = locManager.my_loc
+    map_client = googlemaps.Client(API_KEY)
+    wp_address = '6100 Main St'
+    response = map_client.geocode(wp_address)
+    pprint(str_to_loc(response))
+
+    # # Initialize shelter database
+    # shelter_file = open("./shelters.txt", 'r')
+    # shltr_addr = shelter_file.readline()
+    # while(shltr_addr != ''):
+    # shltr_data = str_to_loc(shltr_addr)
+    # SHELTERS.append(math.dist(user_addr, shltr_data), shltr_data)
+    # shltr_addr = shelter_file.readline()
