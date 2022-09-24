@@ -37935,15 +37935,21 @@ a.u-link.u-text-hover-grey-90:hover {
 }
 
 .u-header .u-menu-1 {
-  margin: -32px 64px 60px auto;
+  margin: -32px 64px 0 auto;
 }
 
 .u-header .u-nav-1 {
+  font-weight: 700;
   font-size: 1rem;
 }
 
 .u-header .u-nav-2 {
   font-size: 1.25rem;
+}
+
+.u-header .u-custom-html-1 {
+  margin-top: 30px;
+  margin-bottom: 60px;
 }
 @media (max-width: 1199px) {
   .u-header .u-menu-1 {
