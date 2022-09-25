@@ -10,6 +10,7 @@ import json
 import urllib
 import locFunc
 import json
+from flask_cors import CORS
 
 app = Flask(__name__)
 
@@ -49,8 +50,11 @@ def login():
             # Send as a parameter to home_update
             my_loc_data = locFunc.str_to_loc(my_loc)
             shelters = locFunc.get_nrst_k_shelter(10)
+            my_loc_data = flask.jsonify({"my_loc_data" : my_loc_data})
+            shelters = flask.jsonify({"shelters" : shelters })
             
         return render_template('home_update.html', my_loc_data, shelters) 
+
     elif request.method == 'GET':
         return render_template('home.html') 
     
