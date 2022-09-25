@@ -12,6 +12,12 @@
     <meta name="generator" content="Nicepage 4.18.8, nicepage.com">
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
     
+    <style>
+      #map {
+        height: 800px;  
+        width: 600px;  
+       }
+    </style>
     
     
     <script type="application/ld+json">{
@@ -197,17 +203,18 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
                     <div class="embed-responsive">
                      
                       <div id="map"></div>
-                      <script type = "text/javascript" src= "https://maps.googleapis.com/maps/api/js?key=
-                      AIzaSyDuu7nGNYVBhoLQFNa1_qZ7O2CHs0ON94E"></script>
-                      
+
+                      <script type = "text/javascript" src= "https://maps.googleapis.com/maps/api/js?key=AIzaSyDuu7nGNYVBhoLQFNa1_qZ7O2CHs0ON94E"></script>
                       <script>
+                        let map;
+                        pos = {lat: 29.716225, lng: -95.39920099999999};
                         function initMap() {
-                          var test = {lat: 29.716225, lng: -95.39920099999999};
-                          var map = new google.maps.Map(document.getElementById('map'), {
-                            zoom: 4,
-                            center: test
+                            map = new google.maps.Map(document.getElementById('map'), {
+                            zoom: 15,
+                            center: {lat: 29.716225, lng: -95.39920099999999}
                           });
-                          var marker = new google.maps.Marker({position: test, map: map});
+                        let marker = new google.maps.Marker({position: pos, map: map});
+                          
                           // {% for address in addresses %}
                           // var add = {lat: {{ address[0]}}, lng: {{ address[1] }}};
                           // var marker = new google.maps.Marker({position: add, map: map});
@@ -217,7 +224,7 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
                         }
                         
                     </script>
-                    <iframe
+                    <!-- <iframe
                     width="600"
                     height="450"
                     style="border:0"
@@ -225,9 +232,9 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
                     allowfullscreen
                     referrerpolicy="no-referrer-when-downgrade"
                     src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDuu7nGNYVBhoLQFNa1_qZ7O2CHs0ON94E&q=Rice+University,Houston+TX">
-                    </iframe>
+                    </iframe> -->
                 
-                    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDuu7nGNYVBhoLQFNa1_qZ7O2CHs0ON94E&callback=myMap"></script>
+                    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDuu7nGNYVBhoLQFNa1_qZ7O2CHs0ON94E&callback=initMap"></script>
 
                     </div>
                   </div>
