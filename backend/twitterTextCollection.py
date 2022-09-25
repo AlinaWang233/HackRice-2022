@@ -14,7 +14,9 @@ search_query = "#hurricane -filter:retweets"
 
 # get tweets from the API
 starttime = "2022-09-22"
-tweets = tw.Cursor(api.search,
+# needs to upgrade  
+label = "https://api.twitter.com/1.1/tweets/search/30day/dev.json"
+tweets = tw.Cursor(api.search_30_day(label, auth),
               q=search_query,
               lang="en",
               since=starttime).items(100)
@@ -26,7 +28,7 @@ for tweet in tweets:
     tweets_copy.append(tweet)
     
 #print("Total Tweets fetched:", len(tweets_copy))
-
+#NOT REALLY NEED TO PRINT OUT BUT USEFUL TO GET
 import pandas as pd
 
 # intialize the dataframe
