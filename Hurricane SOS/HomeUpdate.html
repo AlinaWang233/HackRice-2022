@@ -190,15 +190,51 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
                   </p>
                 </div>
               </div>
+              <!--Google Map-->
               <div class="u-black u-container-style u-layout-cell u-right-cell u-size-30 u-layout-cell-2">
                 <div class="u-container-layout u-container-layout-2">
                   <div class="u-expanded u-grey-light-2 u-map">
                     <div class="embed-responsive">
-                      <iframe class="embed-responsive-item" src="//maps.google.com/maps?output=embed&amp;q=Manhattan%2C%20New%20York&amp;z=10&amp;t=m" data-map="JTdCJTIyYWRkcmVzcyUyMiUzQSUyMk1hbmhhdHRhbiUyQyUyME5ldyUyMFlvcmslMjIlMkMlMjJ6b29tJTIyJTNBMTAlMkMlMjJ0eXBlSWQlMjIlM0ElMjJyb2FkJTIyJTJDJTIybGFuZyUyMiUzQW51bGwlMkMlMjJhcGlLZXklMjIlM0FudWxsJTJDJTIybWFya2VycyUyMiUzQSU1QiU1RCU3RA=="></iframe>
+                     
+                      <div id="map"></div>
+                      <script type = "text/javascript" src= "https://maps.googleapis.com/maps/api/js?key=
+                      AIzaSyDuu7nGNYVBhoLQFNa1_qZ7O2CHs0ON94E"></script>
+                      
+                      <script>
+                        function initMap() {
+                          var test = {lat: 29.716225, lng: -95.39920099999999};
+                          var map = new google.maps.Map(document.getElementById('map'), {
+                            zoom: 4,
+                            center: test
+                          });
+                          var marker = new google.maps.Marker({position: test, map: map});
+                          // {% for address in addresses %}
+                          // var add = {lat: {{ address[0]}}, lng: {{ address[1] }}};
+                          // var marker = new google.maps.Marker({position: add, map: map});
+
+                          // {% endfor %}
+                          
+                        }
+                        
+                    </script>
+                    <iframe
+                    width="600"
+                    height="450"
+                    style="border:0"
+                    loading="lazy"
+                    allowfullscreen
+                    referrerpolicy="no-referrer-when-downgrade"
+                    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDuu7nGNYVBhoLQFNa1_qZ7O2CHs0ON94E&q=Rice+University,Houston+TX">
+                    </iframe>
+                
+                    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDuu7nGNYVBhoLQFNa1_qZ7O2CHs0ON94E&callback=myMap"></script>
+
                     </div>
                   </div>
                 </div>
               </div>
+
+
             </div>
           </div>
         </div>
