@@ -13,10 +13,9 @@ api = tw.API(auth, wait_on_rate_limit=True)
 search_query = "#hurricane -filter:retweets"
 
 # get tweets from the API
-starttime = "2022-09-22"
+starttime = "2022-09-18"
 # needs to upgrade  
-label = "https://api.twitter.com/1.1/tweets/search/30day/dev.json"
-tweets = tw.Cursor(api.search_30_day(label, auth),
+tweets = tw.Cursor(api.search,
               q=search_query,
               lang="en",
               since=starttime).items(100)
