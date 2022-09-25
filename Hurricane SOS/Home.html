@@ -40,25 +40,88 @@
           </div>
           <div class="u-custom-menu u-nav-container">
             <ul class="u-nav u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="Home.html" style="padding: 10px 20px;">Home</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="Login.html" style="padding: 10px 20px;">Login</a>
+</li><!--<li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="Login.html" style="padding: 10px 20px;">Login</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="Chat-with-Rescue-Team.html" style="padding: 10px 20px;">Chat with Rescue Team</a>
-</li></ul>
-          
+</li>--></ul>
+<div class="center">
+	<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+</div>
+
+<div id="id01" class="modal">
+
+  <!--change action_page.php to the api-->
+	<form class="modal-content animate" action="/action_page.php" method="post">
+
+  		<div class="container">
+        <h2 style="text-align:center">Login</h2>
+        <!--The role radio buttons-->
+        <h5 style="text-align:left"><b>Role</b></h5>
+    		<label for="rdt"><b>Resident</b></label>
+        <input type="radio" id="rdt" name="role" required >
+        <label for="drt"><b>Disaster Relief Team</b></label>
+        <input type="radio" id="drt" name="role"><br><br>
+        
+        <label for="fname"><b>First Name</b></label>
+    		<input id="fname" type="text" placeholder="Enter First Name" name="fname" required>
+    
+    		<label for="lname"><b>Last Name</b></label>
+    		<input type="text" placeholder="Enter Last Name" name="lname" required>
+    
+    		<label for="loc"><b>Location</b></label>
+    		<input type = "text" placeholder="Enter Location" name = "loc">
+    
+    		<label for="phone">Enter phone number:</label><br>
+    		<input type="tel" placeholder="xxx-xxx-xxxx" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+        <br>
+        <!--Change the type back to submit in a second-->
+    		<button id="btn" type="submit">Submit</button>
+        <script>
+          const btn = document.getElementById('btn');
+          const fname = document.getElementbyId('fname').value;
+          btn.addEventListener('click', function handleClick() {
+            btn.textContent = fname;
+          });
+        </script>
+        <br>
+    		<label>
+      			<input type="checkbox" checked="checked" name="remember"> Remember me
+    		</label>
+		</div>
+
+  		<div class="container" style="background-color:#f1f1f1">
+    		<button type="button" onclick="modal.style.display = 'none'"class="cancelbtn">Cancel</button>
+    		<span class="psw">Forgot <a href="#">password?</a></span>
+  		</div>
+	</form>
+</div>    
+
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
           </div>
           <div class="u-custom-menu u-nav-container-collapse">
             <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
               <div class="u-inner-container-layout u-sidenav-overflow">
                 <div class="u-menu-close"></div>
                 <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Home.html">Home</a>
-<!--</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Login.html">Login</a>-->
+<!--</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Login.html">Login</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Chat-with-Rescue-Team.html">Chat with Rescue Team</a>
-</li></ul>
+</li>--></ul>
               </div>
             </div>
             <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
           </div>
         </nav>
       </div></header>
+    <!--The Twitter Update Box-->
     <section class="u-clearfix u-image u-section-1" id="carousel_8921" data-image-width="1024" data-image-height="731">
       <div class="u-clearfix u-sheet u-sheet-1">
         <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
@@ -66,31 +129,22 @@
             <div class="u-layout-row">
               <div class="u-align-left u-black u-container-style u-layout-cell u-left-cell u-size-30 u-layout-cell-1">
                 <div class="u-container-layout u-valign-top u-container-layout-1">
-                  <h3 class="u-text u-text-body-alt-color u-text-default u-text-1">Register Your Status</h3>
+                  <h3 class="u-text u-text-body-alt-color u-text-default u-text-1">Nearby Related Posts</h3>
                   <div class="u-form u-form-1">
                     <form action="#" class="u-clearfix u-form-spacing-30 u-form-vertical u-inner-form" style="padding: 0px;" source="email" name="form">
                       <div class="u-form-group u-form-name u-form-partition-factor-2">
-                        <label for="name-319a" class="u-label u-text-body-alt-color u-label-1">Name</label>
-                        <input type="text" placeholder="Enter your Name" id="name-319a" name="name" class="u-border-2 u-border-no-left u-border-no-right u-border-no-top u-border-white u-input u-input-rectangle" required="">
-                      </div>
-                      <div class="u-form-group u-form-partition-factor-2 u-form-phone">
-                        <label for="email-319a" class="u-label u-text-body-alt-color u-label-2">Phone Number</label>
-                        <input type="tel" placeholder="Enter a valid phone number" id="email-319a" name="phone" class="u-border-2 u-border-no-left u-border-no-right u-border-no-top u-border-white u-input u-input-rectangle" required="required" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
-                      </div>
-                      <div class="u-form-group u-form-group-3">
-                        <label for="text-bd60" class="u-label u-text-body-alt-color u-label-3">Location</label>
-                        <input type="text" placeholder="Enter address" id="text-bd60" name="text" class="u-border-2 u-border-no-left u-border-no-right u-border-no-top u-border-white u-input u-input-rectangle" required="required">
+                        <label for="name-319a" class="u-label u-text-body-alt-color u-label-1">Search</label>
+                        <input type="text" placeholder="Search keyword" id="searchbar" name="searchbar" class="u-border-2 u-border-no-left u-border-no-right u-border-no-top u-border-white u-input u-input-rectangle" required="">
                       </div>
                       <div class="u-align-left u-form-group u-form-submit">
                         <a href="#" class="u-btn u-btn-submit u-button-style u-white u-btn-1">Submit</a>
                         <input type="submit" value="submit" class="u-form-control-hidden" wfd-invisible="true">
                       </div>
-                      <div class="u-form-send-message u-form-send-success" wfd-invisible="true"> Thank you! Your message has been sent. </div>
-                      <div class="u-form-send-error u-form-send-message" wfd-invisible="true"> Unable to send your message. Please fix errors then try again. </div>
                       <input type="hidden" value="" name="recaptchaResponse" wfd-invisible="true">
                       <input type="hidden" name="formServices" value="befbff1840e4fc43576c80802b79c5af">
                     </form>
                   </div>
+                  <!-- Put Gallery Under Here -->
                   <p class="u-text u-text-2">Image from <a href="https://www.freepik.com/photos/clouds" class="u-active-none u-border-1 u-border-white u-btn u-button-link u-button-style u-hover-none u-none u-text-body-alt-color u-btn-2">Freepik</a>
                   </p>
                 </div>
