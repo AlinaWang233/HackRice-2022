@@ -15,10 +15,10 @@ search_query = "#hurricane -filter:retweets"
 # get tweets from the API
 starttime = "2022-09-18"
 # needs to upgrade  
-tweets = tw.Cursor(api.search,
-              q=search_query,
+tweets = tw.Cursor(api.search_recent_tweets(search_query,
               lang="en",
-              since=starttime).items(100)
+              since=starttime)
+              ).items(100)
 
 
 # store the API responses in a list

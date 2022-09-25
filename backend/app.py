@@ -22,7 +22,7 @@ my_phone = None
 
 @app.route('/')
 def main():
-    return render_template('home.html') 
+    return render_template('Home.html') 
 
 @app.route('/home/login', methods = ['POST', 'GET'])
 def login():
@@ -53,11 +53,15 @@ def login():
             my_loc_data = flask.jsonify({"my_loc_data" : my_loc_data})
             shelters = flask.jsonify({"shelters" : shelters })
             
-        return render_template('home_update.html', my_loc_data, shelters) 
+            render_template('HomeUpdate.html')
+        return (my_loc_data, shelters) 
 
     elif request.method == 'GET':
-        return render_template('home.html') 
+        return render_template('Home.html') 
     
 @app.route('/home/login/success', methods = ['POST', 'GET'])
 def generate_twitter():
     return "Hello World"
+
+if __name__ == '__main__':
+   app.run(host = "0.0.0.0", port = 3030, debug = True)

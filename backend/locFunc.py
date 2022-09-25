@@ -57,8 +57,12 @@ def get_nrst_k_shelter(k):
         shltr_pin_addr = str_for_pin(shltr_addr)
         heapq.heappush(SHELTERS, (get_distance(str_to_loc(u_loc), shltr_data), (shltr_data, shltr_pin_addr)))
         shltr_addr = shelter_file.readline()
-    
-    return heapq.nsmallest(k,SHELTERS)
+        
+        nrst_shelters = heapq.nsmallest(k,SHELTERS)
+        rtns = []
+        for i in range(k):
+            rtns.append(nrst_shelters[1][0])
+    return rtns
 
 
 if __name__ == '__main__':
