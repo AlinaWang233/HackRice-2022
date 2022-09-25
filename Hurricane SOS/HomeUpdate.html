@@ -139,7 +139,6 @@ window.onclick = function(event) {
                 <div class="u-container-layout u-valign-bottom u-container-layout-1">
                   <h3 class="u-text u-text-body-alt-color u-text-default u-text-1" spellcheck="false">Nearby Related Posts<br>
                   </h3>
-                  <blockquote class="u-text u-text-default u-text-2">Sample quote. Lorem ipsum dolor sit amet, consectetur adipiscing elit nullam nunc justo sagittis suscipit ultrices.</blockquote>
                   <div class="u-carousel u-expanded-width u-gallery u-gallery-slider u-layout-carousel u-lightbox u-no-transition u-show-text-on-hover u-gallery-1" data-interval="5000" data-u-ride="carousel" id="carousel-e942">
                     <ol class="u-absolute-hcenter u-carousel-indicators u-carousel-indicators-1">
                       <li data-u-target="#carousel-e942" data-u-slide-to="0" class="u-active u-grey-70 u-shape-circle" style="width: 10px; height: 10px;"></li>
@@ -149,17 +148,44 @@ window.onclick = function(event) {
                     <div class="u-carousel-inner u-gallery-inner" role="listbox">
                       <div class="u-active u-carousel-item u-effect-fade u-gallery-item u-carousel-item-1">
                         <div class="u-back-slide">
-                          <img class="u-back-image u-expanded" src="images\HoustonHurrican1.jpg">
+                          <iframe
+                          src="Login.html"
+                          title="slide1"
+                          width="510"
+                          height="375"
+                          style="border:0"
+                          loading="lazy"
+                          allowfullscreen
+                          referrerpolicy="no-referrer-when-downgrade"
+                          ></iframe>
                         </div>
                       </div>
                       <div class="u-carousel-item u-effect-fade u-gallery-item u-carousel-item-2">
                         <div class="u-back-slide">
-                          <img class="u-back-image u-expanded" src="images\RiceHurricane.jpg">
+                          <iframe
+                          src="Login.html"
+                          title="slide2"
+                          width="510"
+                          height="375"
+                          style="border:0"
+                          loading="lazy"
+                          allowfullscreen
+                          referrerpolicy="no-referrer-when-downgrade"
+                          ></iframe>
                         </div>
                       </div>
                       <div class="u-carousel-item u-effect-fade u-gallery-item u-carousel-item-2">
                         <div class="u-back-slide">
-                          <img class="u-back-image u-expanded" src="images\Tree.jpeg">
+                          <iframe
+                          src="Login.html"
+                          title="slide3"
+                          width="510"
+                          height="375"
+                          style="border:0"
+                          loading="lazy"
+                          allowfullscreen
+                          referrerpolicy="no-referrer-when-downgrade"
+                          ></iframe>
                         </div>
                       </div>
                     </div>
@@ -188,9 +214,9 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
                       </span>
                     </a>
                   </div>
-                  <p class="u-text u-text-default u-text-3">[DEFAULT ADDRESS] 6100 Main Street, Houston, TX<br>
+                  <p class="u-text u-text-default u-text-3">{{ tweet_loc }}<br>
                   </p>
-                  <p class="u-text u-text-default u-text-4">[DEFAULT DATE/TIME] 01/01/22 11:59 AM CST<br>
+                  <p class="u-text u-text-default u-text-4">{{ tweet_time }}<br>
                   </p>
                   <p class="u-text u-text-5">Image from <a href="https://www.freepik.com/photos/clouds" class="u-active-none u-border-1 u-border-white u-btn u-button-link u-button-style u-hover-none u-none u-text-body-alt-color u-btn-1">Freepik</a>
                   </p>
@@ -205,6 +231,8 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
                       <div id="map"></div>
 
                       <script type = "text/javascript" src= "https://maps.googleapis.com/maps/api/js?key=AIzaSyDuu7nGNYVBhoLQFNa1_qZ7O2CHs0ON94E"></script>
+                      #implement the selected shelter addresses json file
+                      <script src = js></script>
                       <script>
                         let map;
                         pos = {lat: 29.716225, lng: -95.39920099999999};
