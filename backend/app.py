@@ -46,9 +46,10 @@ def login():
             # Calculate the nearest 10 shelters 
             # And return a list of shelter (lat, lng) tuple
             # Send as a parameter to home_update
+            my_loc_data = locFunc.str_to_loc(my_loc)
             shelters = locFunc.get_nrst_k_shelter(10)
             
-        return render_template('home_update.html', shelters) 
+        return render_template('home_update.html', my_loc_data, shelters) 
     elif request.method == 'GET':
         return render_template('home.html') 
     
