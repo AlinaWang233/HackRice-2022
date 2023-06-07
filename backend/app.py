@@ -10,9 +10,10 @@ import json
 import urllib
 import locFunc
 import json
-from flask_cors import CORS
+# from flask_cors import CORS
 
 app = Flask(__name__)
+app.config['DEBUG'] = True  # 开启 debug
 
 my_fname = None 
 my_lname = None
@@ -22,7 +23,7 @@ my_phone = None
 
 @app.route('/')
 def main():
-    return render_template('Home.html') 
+    return render_template('HomeUpdate.html') 
 
 @app.route('/home/login', methods = ['POST', 'GET'])
 def login():
